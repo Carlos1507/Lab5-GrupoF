@@ -59,8 +59,8 @@
 
           <tr th:each="employee, info : ${listaEmpleados}">
               <td th:text="${info.index + 1}"></td>
-              <td th:text="${employee.firstname}"></td>
-              <td th:text="${employee.lastname}"></td>
+              <td th:text="${employee.firstName}"></td>
+              <td th:text="${employee.lastName}"></td>
               <td th:text="${employee.email}"></td>
               <td th:text="${employee.salary}"></td>
             <td><a class="btn btn-outline-info" href="..." data-toggle="tooltip" data-placement="bottom" title="Editar"></a></td>
