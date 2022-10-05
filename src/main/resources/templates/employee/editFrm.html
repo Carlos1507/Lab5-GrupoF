@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+    <body>
+        <div class="container">
+
+            <div class="row mb-4">
+                <div class="col-md-6 offset-md-3">
+                    <h2>Editar Empleado</h2>
+                    <hr/>
+                    <form th:action="@{'/empleado/save'}" method="post" th:object="${employee}">
+                        <input th:field="*{id}" type="hidden"/>
+                        <div class="mb-3">
+                            <label class="form-label">Nombre</label>
+                            <input type="text" class="form-control" th:field="*{firstName}"/>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Apellido</label>
+                            <input type="text" class="form-control" th:field="*{lastName}"/>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Título</label>
+                            <input type="text" class="form-control" th:field="*{email}"/>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Jefe</label>
+                            <select class="form-select" name="manager" id="manager">
+                                <option th:each="depa : ${listaDepartamentos}"
+                                        th:selected="${(depa.id == employee.department.id)}"
+                                        th:text="|${jefe.departmentName}|"
+                                        th:value="${depa.id}"></option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Salario</label>
+                            <input type="number" class="form-control" th:field="*{salary}"/>
+                        </div>
+                        <a th:href="@{'/employee'}" class="btn btn-danger">Cancelar</a>
+                        <button type="submit" class="btn btn-primary">Actualizar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script th:replace="fragments/navbar.html :: footer-bootstrap"></script>
+    </body>
+</html>
