@@ -64,9 +64,10 @@
               <td th:text="${employee.lastName}"></td>
               <td th:text="${employee.email}"></td>
               <td th:text="${employee.salary}"></td>
-            <td><a class="btn btn-outline-info" href="..." data-toggle="tooltip" data-placement="bottom" title="Editar"></a></td>
-            <td><a class="btn btn-outline-danger" href="..." data-toggle="tooltip" data-placement="bottom" title="Borrar"></a></td>
-          </tr>
+              <td><a class="btn btn-primary" th:href="@{'/empleado/edit?id=' + ${employee.id}}">Editar</a>
+              </td>
+              <td><a class="btn btn-danger" th:href="@{'/empleado/delete?id=' + ${employee.id}}">Borrar</a>
+              </td></tr>
 
           </tbody>
         </table>
