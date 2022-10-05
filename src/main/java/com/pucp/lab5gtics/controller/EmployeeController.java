@@ -26,7 +26,7 @@ public class EmployeeController {
     //Buscar Empleado
     public String searchEmployee(Model model, @RequestParam(name = "search",required = false) String search, @RequestParam(name = "order", required = false) Integer order, RedirectAttributes attributes){
 
-        return "XXXXXX";
+        return "employee/list";
     }
 
 
