@@ -18,11 +18,12 @@ public class ConfiguracionSpringSecurity extends WebSecurityConfigurerAdapter {
         http.formLogin();
 
         http.authorizeRequests()
-                .antMatchers("/empleado/lista").authenticated()
-                .antMatchers("/empleado/buscar").authenticated().hasAnyAuthority("admin", "employee")
+
+                .antMatchers("/empleado/buscar").authenticated().hasAnyAuthority("admin","employee")
                 .antMatchers("/empleado/guardar").authenticated().hasAnyAuthority("admin")
                 .antMatchers("/empleado/editar").authenticated().hasAnyAuthority("admin")
                 .antMatchers("/personaje/nuevo").authenticated().hasAnyAuthority("admin")
+                .antMatchers("/empleado/lista").authenticated()
 
                 .anyRequest().permitAll();
         ;
@@ -36,7 +37,7 @@ public class ConfiguracionSpringSecurity extends WebSecurityConfigurerAdapter {
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.jdbcAuthentication()
                 .dataSource(dataSource)
-                .passwordEncoder(new BCryptPasswardEncoder())
+
                 .usersByUsernameQuery("select email, password, enabled FROM usuario WHERE email = ?")
 
     }
