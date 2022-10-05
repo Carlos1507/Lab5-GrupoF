@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!--    Completar link bootstrap-->
+    <title>Editar Empleado</title>
+</head>
     <body>
         <div class="container">
 
@@ -24,12 +34,21 @@
                         </div>
 
                         <div class="mb-3">
-                            <label class="form-label">Jefe</label>
+                            <label class="form-label">Departamento</label>
                             <select class="form-select" name="manager" id="manager">
                                 <option th:each="depa : ${listaDepartamentos}"
                                         th:selected="${(depa.id == employee.department.id)}"
-                                        th:text="|${jefe.departmentName}|"
+                                        th:text="${depa.departmentName}"
                                         th:value="${depa.id}"></option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Trabajo</label>
+                            <select class="form-select" name="man" id="man">
+                                <option th:each="traba : ${listaTrabajos}"
+                                        th:selected="${(traba.id == employee.job.id)}"
+                                        th:text="${traba.jobTitle}"
+                                        th:value="${traba.id}"></option>
                             </select>
                         </div>
                         <div class="mb-3">
@@ -42,6 +61,5 @@
                 </div>
             </div>
         </div>
-        <script th:replace="fragments/navbar.html :: footer-bootstrap"></script>
     </body>
 </html>
