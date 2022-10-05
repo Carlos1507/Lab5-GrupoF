@@ -22,7 +22,9 @@ public class EmployeeController {
 
     @Autowired
     EmployeeRepository employeeRepository;
+    @Autowired
     DepartmentRepository departmentRepository;
+    @Autowired
     JobRepository jobRepository;
 
     @GetMapping({"/lista", ""})
