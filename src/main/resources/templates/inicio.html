@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <!-- Google Fonts-->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+        <div class="container">
+            <div class="row justify-content-md-center mt-5">
+                <div class="col col-xs-12 col-md-6">
+                    <div class="card">
+                        <div class="card-header navbar-light text-center" style="background-color: #eaedfc;">
+                            <a class="navbar-brand">
+                                <img th:src="@{/img/employee.png}" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+                                Lab5
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <form class="row  g-3" method="post">
+                                <div class="form-group">
+                                    <label>Usuario:</label>
+                                    <input type="text" class="form-control"/>
+                                </div>
+                                <div class="form-group">
+                                    <label >Contraseña</label>
+                                    <input type="password" class="form-control"/>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+                    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+                    crossorigin="anonymous"></script>
+        </div>
+</body>
+</html>

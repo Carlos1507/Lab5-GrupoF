@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <nav class="navbar navbar-dark bg-dark navbar-expand-lg ">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <a class="navbar-brand" href="#"> HR </a>
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                </ul>
+            </div>
+        </nav>
+        <div class="container">
+            <p></p>
+            <h2>
+                Información de Empleado
+            </h2>
+            <form method="POST" action= " " >
+                <input type="hidden" name="employeeId" id="employeeId" value="...">
+                <div class="form-group">
+                    <label for="firstName">Nombre</label>
+                    <input type="text" class="form-control disabled" name="firstName" value="...">
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Apellido</label>
+                    <input type="text" class="form-control disabled" name="lastName" value="...">
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo</label>
+                    <input type="text" class="form-control disabled" name="email" value="...">
+                </div>
+                <div class="form-group">
+                    <label for="departmentId">Departamento</label>
+                    <select class="form-control" name="departmentId" id="departmentId" >
+                        <option>-Seleccionar-</option>
+
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="jobId">Trabajo</label>
+                    <select class="form-control" name="jobId" id="jobId">
+                        <option>-Seleccionar-</option>
+
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="salary">Salario</label>
+                    <input type="text" class="form-control disabled" name="salary" value="...">
+                </div>
+
+                <div class="form-group">
+                    <div class="controls">
+                        <a class="btn btn-primary" href="">Cancelar</a>&nbsp;&nbsp;&nbsp;
+                        <button type="submit" class="btn btn-outline-secondary">Guardar</button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+</body>
+</html>
